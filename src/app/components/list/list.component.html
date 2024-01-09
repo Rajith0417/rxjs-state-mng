@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let plant of plantService.plants$ | async" (click)="loadDetails(plant.id)">
+    {{ plant.name }}
+  </li>
+</ul>
+<div *ngIf="plantService.loading$| async">Loading...</div>
+<button (click)="onLoadMore()">Load More</button>

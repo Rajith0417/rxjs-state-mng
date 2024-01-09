@@ -1,27 +1,39 @@
 # RxjsStateMng
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+For this test, you'll need to display a list of plants as well as their details page using the data provided by the API.
 
-## Development server
+## Minimal Conditions
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### List page
 
-## Code scaffolding
+- Each plant should be displayed as a card.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- The card's content is determined by what the API provides.
 
-## Build
+- The list must show rows of 5 cards in the desktop breakpoint (window of 1025px and up), 2 cards for the tablet breakpoint (768px to 1024px), and 1 card in the mobile breakpoint (320px to 767px).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- The API is available here: https://sg666zbdmf.execute-api.us-east-1.amazonaws.com/dev
 
-## Running unit tests
+  - The results shown in the list must be loaded 10 at a time. A `More Results` button allows loading 10 more results, until no more results are available.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  - The API provides paginated results. To access the next set of results, use the value in the `next` key. It's the suffix needed to get the next results.
 
-## Running end-to-end tests
+  - You should only ask for the next 10 results when the user clicks on the `More Results` button.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Use the `list.png` file as your reference for the visual results.
 
-## Further help
+### Details page
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- The details page can be accessed by clicking on the corresponding card in the list page.
+
+- The details' content is determined by what the API provides.
+
+- The page must present the content on 2 columns in the desktop & tablet breakpoints (768px and up), and on a single column in the mobile breakpoint (320px to 767px).
+
+- You can request the details of each plant using the plant id (example: `https://sg666zbdmf.execute-api.us-east-1.amazonaws.com/dev/1/`)
+
+- A `Back` button allows the user to go back to the list.
+
+- Use the `details.png` file as your reference for the visual results.
+
+The visuals must be produced uniquely by yourself (no visual library allowed). The test need to be coded using the **Angular** framework. Use `Angular CLI` to generate your project.

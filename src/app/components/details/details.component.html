@@ -1,0 +1,7 @@
+<div *ngIf="plantService.loading$| async">Loading...</div>
+<ul>
+  <li *ngFor="let detail of plantService.details$ | async">
+    {{ detail.name }}
+    {{ detail.phone }}
+  </li>
+</ul>
